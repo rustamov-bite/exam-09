@@ -32,17 +32,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.logout()
                 .logoutUrl("/logout")
-                .logoutSuccessUrl("/")
+                .logoutSuccessUrl("/users/login")
                 .clearAuthentication(true)
                 .invalidateHttpSession(true);
 
         http.authorizeRequests()
-                .anyRequest()
-                .authenticated();
-
-        http.authorizeRequests()
                 .antMatchers("/users/**")
                 .permitAll();
+
+        http.authorizeRequests()
+                .anyRequest()
+                .authenticated();
 
     }
 
