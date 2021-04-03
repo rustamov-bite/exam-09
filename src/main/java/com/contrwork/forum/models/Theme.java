@@ -3,6 +3,7 @@ package com.contrwork.forum.models;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -17,6 +18,8 @@ public class Theme {
     private Long id;
 
     private String title;
+
+    private LocalDate date;
 
     @ManyToOne
     private User user;
