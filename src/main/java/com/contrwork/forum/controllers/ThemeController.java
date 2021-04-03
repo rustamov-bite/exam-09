@@ -82,6 +82,7 @@ public class ThemeController {
         }
         model.addAttribute("theme", theme.get());
         model.addAttribute("user", user.get());
+        model.addAttribute("currentPage", page);
         return "preciseTheme";
     }
 }
