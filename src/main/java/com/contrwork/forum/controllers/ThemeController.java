@@ -73,7 +73,7 @@ public class ThemeController {
         }
         if (theme.get().getAnswerCount() > 0) {
             Page<Answer> answers = answerService.getAnswersByTheme(theme.get(),
-                    PageRequest.of(page - 1, size, Sort.by(Sort.Direction.DESC, "answerDate")));
+                    PageRequest.of(page - 1, size, Sort.by(Sort.Direction.ASC, "answerDate")));
             model.addAttribute("answers", answers.getContent());
             model.addAttribute("pages", answers.getTotalPages());
         } else {

@@ -23,7 +23,6 @@ import java.util.Optional;
 public class IndexController {
     private final UserService userService;
     private final ThemeService themeService;
-    private final AnswerService answerService;
     private final Integer size = 2;
 
     @GetMapping("/")
