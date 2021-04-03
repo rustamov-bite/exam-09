@@ -26,10 +26,6 @@ public class User {
     @OneToMany
     private List<Theme> themes;
 
-    @ToString.Exclude
-    @OneToMany
-    private List<Answer> answers;
-
     @Builder.Default
     private boolean enabled = true;
 

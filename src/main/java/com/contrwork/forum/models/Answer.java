@@ -21,7 +21,8 @@ public class Answer {
 
     private String message;
 
-    private LocalDate date;
+    @Builder.Default
+    private LocalDate answerDate = LocalDate.now();
 
     @ManyToOne
     private Theme theme;

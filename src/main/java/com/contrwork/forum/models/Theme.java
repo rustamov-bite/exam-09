@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.List;
 
 @Data
 @Entity
@@ -19,12 +18,12 @@ public class Theme {
 
     private String title;
 
-    private LocalDate date;
+    @Builder.Default
+    private Long answerCount = (long) 0;
+
+    @Builder.Default
+    private LocalDate date = LocalDate.now();
 
     @ManyToOne
     private User user;
-
-    @ToString.Exclude
-    @OneToMany
-    private List<Answer> answers;
 }
