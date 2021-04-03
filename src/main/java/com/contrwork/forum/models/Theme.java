@@ -1,11 +1,9 @@
 package com.contrwork.forum.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -22,4 +20,8 @@ public class Theme {
 
     @ManyToOne
     private User user;
+
+    @ToString.Exclude
+    @OneToMany
+    private List<Answer> answers;
 }
