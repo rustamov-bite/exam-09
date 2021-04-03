@@ -81,13 +81,20 @@
             </div>
         </#if>
         <#if (pages > 0)>
-            <div>
-                <a href="?page=${currentPage - 1}">(<)</a>
-            </div>
-            <div>
-                <a href="?page=${currentPage + 1}">(>)</a>
             </div>
             <div class="pages">
+                <div class="d-flex flex-row">
+                    <#if (currentPage > 1)>
+                        <div>
+                        <a href="?page=${currentPage - 1}">(<)</a>
+                    </div>
+                    </#if>
+                    <#if (currentPage < pages)>
+                        <div>
+                            <a href="?page=${currentPage + 1}">(>)</a>
+                        </div>
+                    </#if>
+                </div>
                 <#list 1..pages as x>
                     <a class="pageButton" href="?page=${x}">${x}</a>
                 </#list>
