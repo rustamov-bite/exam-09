@@ -40,6 +40,7 @@ public class IndexController {
         model.addAttribute("user", user.get());
         model.addAttribute("themes", themePage.getContent());
         model.addAttribute("pages", themePage.getTotalPages());
+        model.addAttribute("currentPage", page);
         return "mainPage";
     }
 }
